@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import Header from './components/Header';
+import ProductList from './components/ProductList';
 
 const dataUrl =
   'https://raw.githubusercontent.com/buscape-company/exercicios/master/frontend/resources/data.json';
@@ -33,7 +34,7 @@ class App extends Component {
           showCart={this.state.showCart}
           openCart={() => this.setState({ showCart: !this.state.showCart })}
         />
-        {JSON.stringify(this.state.products)}
+        <ProductList products={this.state.products} />
       </div>
     );
   }
