@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import './App.css';
 import Header from './components/Header';
 
 const dataUrl =
@@ -28,7 +27,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <Header
           cart={this.state.cart}
           showCart={this.state.showCart}
