@@ -1,0 +1,28 @@
+.gallery {
+  display: inline-block;
+  height: 200px;
+}
+
+.gallery-itens {
+  display: inline-block;
+  vertical-align: super;
+  margin-right: 10px;
+}
+
+.gallery-item {
+  margin: 5px 0;
+}
+
+.gallery-item > img {
+  width: 40px;
+  height: 40px;
+}
+
+.gallery-display {
+  display: inline-block;
+}
+
+.gallery-display > img {
+  width: 200px;
+  height: 200px;
+}
