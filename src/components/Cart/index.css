@@ -1,6 +1,5 @@
 .cart {
   background-color: #dcae01;
-  height: 200px;
   position: absolute;
   width: 100%;
   left: 0;
@@ -15,11 +14,19 @@
   margin: 0;
 }
 
-.cart > hr {
+.cart > .subTotal {
+  text-align: right;
+  padding: 10px;
+}
+
+.cart > .subTotal hr {
   display: block;
   height: 1px;
   border: 0;
   border-top: 1px solid #000;
-  margin: 1em 0;
   padding: 0;
+}
+
+.cart > .subTotal p {
+  margin: 5px 0;
 }

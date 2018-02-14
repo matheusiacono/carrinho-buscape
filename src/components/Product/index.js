@@ -5,7 +5,9 @@ import './index.css';
 import heart from './heart.svg';
 import Gallery from '../Gallery';
 
-const Product = ({ images, name, price }) => (
+const Product = ({
+  images, name, price, addToCart,
+}) => (
   <div className="product">
     <Gallery images={images} name={name} />
     <div className="product-display">
@@ -22,23 +24,23 @@ const Product = ({ images, name, price }) => (
         <p className="installment money">
           {`${price.installments}x R$ `}
           <strong>
-            {`${price.installmentValue.toLocaleString('pr-BR', {
+            {price.installmentValue.toLocaleString('pr-BR', {
               minimumFractionDigits: 2,
-            })}`}
+            })}
           </strong>
         </p>
         <p className="value">
           ou{' '}
           <span className="money">
-            {`${price.value.toLocaleString('pr-BR', {
+            {price.value.toLocaleString('pr-BR', {
               style: 'currency',
               currency: 'BRL',
-            })}`}
+            })}
           </span>{' '}
           à vista
         </p>
       </div>
-      <button className="add-to-cart">
+      <button className="add-to-cart" onClick={() => addToCart({ name, image: images[0], price })}>
         Adicionar ao Carrinho <span className="caret" />
       </button>
     </div>
@@ -53,6 +55,7 @@ Product.propTypes = {
     installmentValue: PropTypes.number,
     value: PropTypes.number,
   }).isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 
 export default Product;

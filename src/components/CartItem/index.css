@@ -1,5 +1,26 @@
 .cart-item {
   background-color: #c59d00;
-  height: 50px;
   margin-bottom: 3px;
+  padding: 5px 10px;
+}
+
+.cart-item > img {
+  width: 70px;
+  height: 70px;
+  border: 1px solid #000;
+  vertical-align: top;
+}
+
+.cart-item-details {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.cart-item-details > p.cart-item-name {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.cart-item-details > p {
+  margin: 0;
 }
