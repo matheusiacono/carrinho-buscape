@@ -1,0 +1,9 @@
+.product {
+  background-color: #fff;
+  padding: 0 20px;
+}
+
+.product > img {
+  width: 200px;
+  height: 200px;
+}
