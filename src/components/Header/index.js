@@ -18,7 +18,7 @@ const Header = ({ cart, openCart, showCart }) => (
 );
 
 Header.propTypes = {
-  cart: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number })).isRequired,
+  cart: PropTypes.arrayOf(PropTypes.object).isRequired,
   openCart: PropTypes.func.isRequired,
   showCart: PropTypes.bool.isRequired,
 };
