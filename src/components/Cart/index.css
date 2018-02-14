@@ -6,6 +6,7 @@
   left: 0;
   right: 0;
   margin-top: 10px;
+  z-index: 999;
 }
 
 .cart > ul {
