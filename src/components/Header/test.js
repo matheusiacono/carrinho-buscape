@@ -7,10 +7,10 @@ import Header from '.';
 describe('Header component', () => {
   let component;
   const openCart = jest.fn();
-  const counter = 2;
+  const cart = [];
 
   beforeEach(() => {
-    component = shallow(<Header openCart={openCart} counter={counter} />);
+    component = shallow(<Header openCart={openCart} cart={cart} showCart={false} />);
   });
 
   it('Should render successfully', () => {
@@ -18,20 +18,34 @@ describe('Header component', () => {
   });
 
   it('Should display counter value', () => {
-    expect(component.find('.counter').text()).toEqual(`${counter}`);
+    expect(component.find('.counter').text()).toEqual(`${cart.length}`);
   });
 
   describe('Open cart button', () => {
+    beforeEach(() => {
+      component = mount(<Header openCart={openCart} cart={cart} showCart={false} />);
+    });
+
     it('Should exist', () => {
       expect(component.find('.open-cart-button').length).toEqual(1);
     });
 
     it('Should call the openCart function when clicked', () => {
-      component = mount(<Header openCart={openCart} counter={counter} />);
-
       expect(openCart.mock.calls.length).toEqual(0);
       component.find('.open-cart-button').simulate('click');
       expect(openCart.mock.calls.length).toEqual(1);
+    });
+  });
+
+  describe('Cart', () => {
+    it('Should not exist when component render', () => {
+      expect(component.find('.cart').length).toEqual(0);
+    });
+
+    it('Should exist when showCart is true', () => {
+      component = mount(<Header openCart={openCart} cart={cart} showCart />);
+
+      expect(component.find('.cart').length).toEqual(1);
     });
   });
 });

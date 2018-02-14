@@ -3,23 +3,24 @@ import PropTypes from 'prop-types';
 
 import './index.css';
 import logo from './logo-buscape.svg';
-import menu from './menu-icon.svg';
+import OpenCartButton from '../OpenCartButton';
+import Cart from '../Cart';
 
-const Header = ({ counter, openCart }) => (
+const Header = ({ cart, openCart, showCart }) => (
   <div className="header">
     <img src={logo} alt="logo do buscapé" />
     <div className="open-cart">
-      <span className="counter">{counter}</span>
-      <button className="open-cart-button" onClick={openCart}>
-        <img src={menu} alt="menu" />
-      </button>
+      <span className="counter">{cart.length}</span>
+      <OpenCartButton openCart={openCart} />
     </div>
+    {showCart ? <Cart /> : null}
   </div>
 );
 
 Header.propTypes = {
-  counter: PropTypes.number.isRequired,
+  cart: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number })).isRequired,
   openCart: PropTypes.func.isRequired,
+  showCart: PropTypes.bool.isRequired,
 };
 
 export default Header;
