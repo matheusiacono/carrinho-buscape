@@ -7,3 +7,119 @@
   width: 200px;
   height: 200px;
 }
+
+.product-display {
+  display: inline-block;
+  width: 350px;
+}
+
+@media screen and (min-width: 768px) {
+  .product {
+    padding: 0 50px;
+  }
+  .product-display {
+    float: right;
+  }
+}
+
+.product-display .heart {
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+}
+
+.product-display-name {
+  color: #575757;
+  font-size: 18px;
+}
+
+.product-display > hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.product-display > .price {
+  display: inline-block;
+}
+
+.product-display > .price > p {
+  margin: 10px 0;
+}
+
+.product-display > .price .money {
+  color: #26af51;
+  font-size: 18px;
+}
+
+.product-display > .price > .installment strong {
+  font-size: 30px;
+}
+
+.product-display > .price > .value {
+  font-size: 14px;
+  color: #575757;
+}
+
+.product-display > .add-to-cart {
+  vertical-align: top;
+  margin-top: 10px;
+  background-color: #23b14f;
+  padding: 6px 20px;
+  color: #fff;
+  border: 1px solid transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.best-price-tag > span {
+  background: #208cde;
+  border: none;
+  display: inline-block;
+  height: 28px;
+  line-height: 28px;
+  position: relative;
+  text-decoration: none;
+  width: 100px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.best-price-tag > span:before {
+  background: #208cde;
+  border: none;
+  content: "";
+  display: block;
+  height: 20px;
+  left: 90px;
+  position: absolute;
+  top: 4px;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: 21px;
+}
+.best-price-tag > span button {
+  color: #fff;
+  background: none;
+  border: none;
+  font-weight: bold;
+  outline: none;
+  position: relative;
+  width: 100px;
+  height: 28px;
+}
+
+.caret {
+  content: '';
+  border-bottom: 4px solid transparent;
+  border-top: 4px solid transparent;
+  border-left: 4px solid #fff;
+  display: inline-block;
+  height: 0;
+  width: 0;
+}
